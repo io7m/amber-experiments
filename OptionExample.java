@@ -8,10 +8,13 @@ public final class OptionExample
   public static void main(
     final String[] args)
   {
-    final Option.Some<Integer> x =
+    final Option.Some<Integer> x0 =
       new Option.Some<>(Integer.valueOf(23));
+    final Option.None<Integer> x1 =
+      new Option.None<>();
 
-    show(x);
+    show(x0);
+    show(x1);
   }
 
   private static void show(
@@ -19,8 +22,7 @@ public final class OptionExample
   {
     __match (x) {
       case null: {
-        System.out.println("null");
-        break;
+        throw new AssertionError("Unreachable");
       }
       case Option.Some s: {
         System.out.println("Some: " + s);
