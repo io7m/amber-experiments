@@ -24,12 +24,16 @@ public final class OptionExample
       case null: {
         throw new AssertionError("Unreachable");
       }
-      case Option.Some s: {
+      case Option.Some<Integer> s: {
         System.out.println("Some: " + s);
         break;
       }
-      case Option.None n: {
+      case Option.None<Integer> n: {
         System.out.println("None: " + n);
+        break;
+      }
+      case Option<Integer> o: {
+        System.out.println("Option: " + o);
         break;
       }
     }
