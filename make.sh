@@ -7,4 +7,6 @@ mkdir -p out
 
 ${JAVAC} Option.java
 ${JAVAC} OptionExample.java
+${JAVAC} OptionOverlap.java || true
+${JAVAC} OptionWrongType.java || true
 
